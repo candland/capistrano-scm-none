@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{SCM None for Capistrano 3}
   spec.description   = %q{Use Capistrano 3 without source control management on the remote hosts.}
-  spec.homepage      = "http://candland.net/capistrano-scm-none"
+  spec.homepage      = "https://github.com/candland/capistrano-scm-none"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
