@@ -12,13 +12,10 @@ module Capistrano
           namespace :scm do
             namespace :none do
               task :create_release do
-                on release_roles :all do
-                  execute :mkdir, "-p", release_path
-                  if Rake::Task.task_defined?('deploy:upload')
-                    invoke('deploy:upload')
-                  else
-                    raise "Expecting a deploy:upload task to be defined."
-                  end
+                if Rake::Task.task_defined?('deploy:upload')
+                  invoke('deploy:upload')
+                else
+                  raise "Expecting a deploy:upload task to be defined."
                 end
               end
 
