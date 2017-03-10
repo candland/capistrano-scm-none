@@ -14,11 +14,11 @@ module Capistrano
               task :create_release do
                 on release_roles :all do
                   execute :mkdir, "-p", release_path
-                  if Rake::Task.task_defined?('deploy:upload')
-                    invoke('deploy:upload')
-                  else
-                    raise "Expecting a deploy:upload task to be defined."
-                  end
+                end
+                if Rake::Task.task_defined?('deploy:upload')
+                  invoke('deploy:upload')
+                else
+                  raise "Expecting a deploy:upload task to be defined."
                 end
               end
 
