@@ -12,6 +12,9 @@ module Capistrano
           namespace :scm do
             namespace :none do
               task :create_release do
+                on release_roles :all do
+                  execute :mkdir, "-p", release_path
+                end
                 if Rake::Task.task_defined?('deploy:upload')
                   invoke('deploy:upload')
                 else
